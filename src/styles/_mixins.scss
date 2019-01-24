@@ -1,0 +1,21 @@
+@mixin ui-fit() {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+@mixin ui-button-clear() {
+  border: none;
+  appearance: none;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+  font-size: unset;
+
+  &:disabled {
+    color: currentColor;
+  }
+}
