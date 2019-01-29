@@ -1,6 +1,6 @@
 module.exports = {
   publicPath: './',
   configureWebpack: {
-    entry: './src/demo/index.js',
+    entry: './src/demo/main.js',
   },
 };
