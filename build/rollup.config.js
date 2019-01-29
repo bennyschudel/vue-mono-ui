@@ -15,8 +15,9 @@ const config = {
     name: 'VueMonoUi',
     exports: 'named',
     globals: {
-      lodash: '_',
+      vue: 'Vue',
       d3: 'd3',
+      lodash: '_',
     },
   },
   plugins: [
