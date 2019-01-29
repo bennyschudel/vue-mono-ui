@@ -1,6 +1,6 @@
 {
   "name": "@hotpink/vue-mono-ui",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "description": "Mono UI component library in vue",
   "private": false,
   "main": "dist/vue-mono-ui.umd.js",
@@ -22,8 +22,7 @@
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/vue-mono-ui.min.js",
     "semantic-release": "semantic-release"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
@@ -86,5 +85,11 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bennyschudel/vue-mono-ui.git"
+  },
+  "homepage": "https://github.com/bennyschudel/vue-mono-ui#readme",
+  "bugs": "https://github.com/bennyschudel/vue-mono-ui"
 }
