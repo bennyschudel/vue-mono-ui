@@ -16,7 +16,9 @@
   "files": [
     "dist/*",
     "src/*",
-    "!src/demo/*"
+    "!build/*",
+    "!src/demo/*",
+    "!vue.config.js"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
