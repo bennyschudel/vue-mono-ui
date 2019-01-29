@@ -11,16 +11,28 @@
       <path class="stroke no-fill" d="M15.5,10c0,0,0-3,0-4c0-1.9-1.6-3.5-3.5-3.5S8.5,4.1,8.5,6c0,1,0,1.5,0,1.5"/>
     </template>
     <template v-else-if="is('arrow-up')">
-      <polyline class="no-fill stroke" points="7,14 12,9 17,14 "/>
+      <polyline class="no-fill stroke" points="7,13 12,8 17,13"/>
     </template>
     <template v-else-if="is('arrow-down')">
-      <polyline class="no-fill stroke" points="17,9 12,14 7,9 "/>
+      <polyline class="no-fill stroke" points="17,10 12,15 7,10"/>
+    </template>
+    <template v-else-if="is('arrow-right')">
+      <polyline class="no-fill stroke" points="11,6.5 16,11.5 11,16.5"/>
+    </template>
+    <template v-else-if="is('arrow-left')">
+      <polyline class="no-fill stroke" points="13,16.5 8,11.5 13,6.5"/>
     </template>
     <template v-else-if="is('sync')">
       <path class="stroke no-fill" d="M17.3,6.7c-1.4-1.4-3.2-2.2-5.3-2.2c-4.1,0-7.5,3.4-7.5,7.5"/>
       <path class="stroke no-fill" d="M6.7,17.3c1.4,1.4,3.2,2.2,5.3,2.2c4.1,0,7.5-3.4,7.5-7.5"/>
       <polyline class="stroke no-fill" points="2,8 4.5,12 8.5,9.5"/>
       <polyline class="stroke no-fill" points="22,16 19.5,12 15.5,14.5"/>
+    </template>
+    <template v-else-if="is('star')">
+      <polygon class="no-fill stroke" points="12,2.5 14.1,9 21,9 15.4,13.1 17.6,19.6 12,15.6 6.4,19.6 8.6,13.1 3,9 9.9,9"/>
+    </template>
+    <template v-else-if="is('download')">
+      <path class="no-fill stroke" d="M21,21H3v-3h18V21z M12,2v13 M7,10l5,5l5-5"/>
     </template>
   </svg>
 </template>
