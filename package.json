@@ -4,6 +4,12 @@
   "license": "MIT",
   "description": "Mono UI component library in vue",
   "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bennyschudel/vue-mono-ui.git"
+  },
+  "homepage": "https://github.com/bennyschudel/vue-mono-ui#readme",
+  "bugs": "https://github.com/bennyschudel/vue-mono-ui/issues",
   "main": "dist/vue-mono-ui.umd.js",
   "module": "dist/vue-mono-ui.esm.js",
   "unpkg": "dist/vue-mono-ui.min.js",
@@ -88,11 +94,5 @@
   },
   "publishConfig": {
     "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bennyschudel/vue-mono-ui.git"
-  },
-  "homepage": "https://github.com/bennyschudel/vue-mono-ui#readme",
-  "bugs": "https://github.com/bennyschudel/vue-mono-ui/issues"
+  }
 }
