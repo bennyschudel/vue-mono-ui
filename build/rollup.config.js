@@ -10,13 +10,14 @@ const argv = minimist(process.argv.slice(2));
 
 const config = {
   input: 'src/entry.js',
-  external: ['lodash', 'd3'],
+  external: ['d3', 'lodash', 'vue'],
   output: {
     name: 'VueMonoUi',
     exports: 'named',
     globals: {
-      lodash: '_',
       d3: 'd3',
+      lodash: '_',
+      vue: 'Vue',
     },
   },
   plugins: [
