@@ -16,7 +16,8 @@
   "files": [
     "dist/*",
     "src/*",
-    "!src/demo/*"
+    "!src/demo/*",
+    "!src/stories/*"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -27,14 +28,18 @@
     "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/vue-mono-ui.umd.js",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/vue-mono-ui.esm.js",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/vue-mono-ui.min.js",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
     "d3": "~5.x",
     "lodash": "~4.x",
-    "vue": "~2.x"
+    "vue": "~2.x",
+    "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@storybook/vue": "^4.1.11",
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
     "@vue/cli-service": "^3.3.0",
@@ -42,7 +47,10 @@
     "@vue/test-utils": "^1.0.0-beta.20",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.5",
+    "babel-preset-vue": "^2.0.2",
     "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
     "eslint": "^5.12.1",
     "eslint-loader": "^2.1.1",
     "eslint-plugin-vue": "^5.1.0",
@@ -60,7 +68,9 @@
     "sass-loader": "^7.1.0",
     "semantic-release": "^15.13.3",
     "tinycolor2": "^1.4.1",
-    "vue-template-compiler": "^2.5.21"
+    "vue-loader": "^15.6.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.22"
   },
   "babel": {
     "presets": [
