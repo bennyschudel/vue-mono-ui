@@ -1,12 +1,22 @@
 <template>
   <div class="demo">
-    <UiButton>Hello</UiButton>
-    <UiInput :value.sync="inputValue" />
-    <pre>{{inputValue}} {{typeof inputValue}}</pre>
-
     <UiWidgetManager>
-      <UiWidget :appearance.sync="widgets[0].appearance">Hello</UiWidget>
-      <UiWidget :appearance.sync="widgets[1].appearance">World</UiWidget>
+      <UiWidget title="buttons">
+        <UiButton>Hello</UiButton>
+        <UiButton icon="download">Hello</UiButton>
+      </UiWidget>
+
+      <UiWidget title="Input">
+        <UiInput :value.sync="inputValue" />
+        <pre>{{inputValue}} {{typeof inputValue}}</pre>
+      </UiWidget>
+
+      <UiWidget
+        v-for="(item, index) in widgets"
+        :key="index"
+        :appearance.sync="item.appearance"
+        :title="item.title"
+      >{{item.content}}</UiWidget>
     </UiWidgetManager>
   </div>
 </template>
@@ -18,10 +28,14 @@ export default {
     inputValue: 'hello',
     widgets: [
       {
+        title: 'Widget 1',
         appearance: 'normal',
+        content: 'Hello',
       },
       {
+        title: 'Widget 2',
         appearance: 'normal',
+        content: 'World',
       },
     ],
   }),
