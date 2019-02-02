@@ -1,6 +1,23 @@
-import { storiesOf } from '@storybook/vue';
+import Vue from 'vue';
 
-storiesOf('UiButton', module).add(
-  'default button',
-  () => '<UiButton>My Button</UiButton>',
-);
+import { configure } from '@storybook/vue';
+
+import * as components from './components/index';
+
+const SbComponents = {
+  install: Vue => {
+    Object.keys(components).forEach(componentName => {
+      Vue.component(componentName, components[componentName]);
+    });
+  },
+};
+
+Vue.use(SbComponents);
+
+const req = require.context('./', true, /\.story\.js$/);
+
+function loadStories() {
+  req.keys().forEach(req);
+}
+
+configure(loadStories, module);
