@@ -7,8 +7,11 @@
       v-on="listeners"
     >
       <div class="ui-button__body">
-        <div class="ui-button__icon">
-          <slot name="icon"></slot>
+        <div
+          v-if="icon"
+          class="ui-button__icon"
+        >
+          <UiIcon :icon="icon" />
         </div>
         <div class="ui-button__label">
           <slot></slot>
@@ -28,6 +31,9 @@ export default {
     disabled: {
       type: Boolean,
       default: false,
+    },
+    icon: {
+      type: String,
     },
   },
   computed: {
