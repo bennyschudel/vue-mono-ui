@@ -6,3 +6,4 @@ export { default as UiIconButton } from './UiIconButton.vue';
 export { default as UiInput } from './UiInput.vue';
 export { default as UiWidget } from './UiWidget.vue';
 export { default as UiWidgetManager } from './UiWidgetManager.vue';
+export { default as UiRange } from './UiRange.vue';

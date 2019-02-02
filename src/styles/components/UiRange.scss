@@ -1,0 +1,50 @@
+@import '../core';
+@import '../input-range';
+
+.ui-range {
+  @include input-range(
+    $height: 32px,
+    $track-height: 1px,
+    $thumb-height: 16px,
+    $thumb-width: 1px
+  );
+
+  display: inline-flex;
+  height: 32px;
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.ui-range__element {
+  flex: 1 1 auto;
+}
+
+.ui-range__input {
+  flex: 0 0 32px;
+  padding-left: 8px;
+
+  .ui-input__field {
+    text-align: right;
+  }
+}
+
+.ui-range {
+  input[type='range'] {
+    width: 100%;
+    color: var(--mono-color);
+  }
+
+  input[type='number'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &.ui-range__input {
+      border-style: solid;
+      border-width: 0;
+      border-color: currentColor;
+    }
+  }
+}

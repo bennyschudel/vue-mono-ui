@@ -61,19 +61,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.ui-input {
-}
-
-.ui-input__field {
-  font-size: 12px;
-  font-family: Monaco;
-  font-weight: 600;
-  appearance: none;
-  border: 0;
-  padding: 4px 0;
-  outline: none;
-  border-bottom: 1px solid black;
-  width: 100%;
-}
-</style>
+<style src="../styles/components/UiInput.scss" lang="scss" />

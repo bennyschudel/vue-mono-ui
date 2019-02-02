@@ -6,6 +6,10 @@
         <UiButton icon="download">Hello</UiButton>
       </UiWidget>
 
+      <UiWidget title="range">
+        <UiRange :value.sync="rangeValue" />
+      </UiWidget>
+
       <UiWidget title="Input">
         <UiInput :value.sync="inputValue" />
         <pre>{{inputValue}} {{typeof inputValue}}</pre>
@@ -26,6 +30,7 @@ export default {
   name: 'demo',
   data: () => ({
     inputValue: 'hello',
+    rangeValue: 50,
     widgets: [
       {
         title: 'Widget 1',
@@ -43,6 +48,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../styles/variables';
+
 .demo {
   .ui-widget {
     border: 1px solid black;

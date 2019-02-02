@@ -1,0 +1,69 @@
+@mixin input-range-track(
+  $width,
+  $height,
+) {
+  width: $width;
+  height: $height;
+  background: currentColor;
+}
+
+@mixin input-range-runnable-track(
+  $width,
+  $height,
+) {
+  @include input-range-track($width, $height);
+  border: none;
+}
+
+@mixin input-range-thumb(
+  $width,
+  $height,
+) {
+  border: none;
+  height: $height;
+  width: $width;
+  background: currentColor;
+}
+
+@mixin input-range(
+  $width: 100%,
+  $height: 24px,
+
+  $thumb-height: 24px,
+  $thumb-width: 4px,
+  $track-height: 4px
+) {
+  input[type="range"] {
+    background: transparent;
+    margin: 0;
+    height: $height;
+    -webkit-appearance: none;
+
+    &:focus { outline: none; }
+
+    &::-webkit-slider-runnable-track { @include input-range-runnable-track($width, $track-height); }
+    &::-webkit-slider-thumb {
+      @include input-range-thumb($thumb-width, $thumb-height);
+
+      -webkit-appearance: none;
+      margin-top: -($thumb-height - $track-height) / 2;
+    }
+
+    &::-moz-rangeTrack { @include input-range-runnable-track($width, $track-height); }
+    &::-moz-thumb { @include input-range-thumb($thumb-width, $thumb-height); }
+
+    &::-ms-track {
+      @include input-range-track($width, $track-height);
+      background: transparent;
+      border-color: transparent;
+      border-width: 10px 0;
+    }
+
+    &::-ms-thumb { @include input-range-thumb($thumb-width, $thumb-height); }
+    &::-ms-fill-lower { background: currentColor; }
+    &::-ms-fill-upper { background: currentColor; }
+    &::-ms-tooltip { display: none; }
+    &::-ms-ticks-before { background: transparent; }
+    &::-ms-ticks-after { background: transparent; }
+  }
+}

@@ -4,6 +4,8 @@ import { configure } from '@storybook/vue';
 
 import * as components from './components/index';
 
+import '../styles/_variables.scss';
+
 const SbComponents = {
   install: Vue => {
     Object.keys(components).forEach(componentName => {

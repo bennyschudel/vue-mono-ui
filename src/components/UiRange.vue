@@ -1,0 +1,94 @@
+<template>
+  <div :class="classes">
+    <div
+      class="ui-range__element"
+    ><input
+      type="range"
+      :value="value"
+      :min="min"
+      :max="max"
+      :step="step"
+      @input="onInput"
+      @change="onChange"
+    /></div
+    ><UiInput
+      class="ui-range__input"
+      type="number"
+      :value="value"
+      :min="min"
+      :max="max"
+      :step="step"
+      @input="onInputInput"
+      @change="onInputChange"
+    />
+</div>
+</template>
+
+<script>
+import { clamp } from '../core/utils';
+
+import ComponentMixin from '../mixins/ComponentMixin';
+
+import UiInput from './UiInput';
+
+export default {
+  name: 'ui-range',
+  mixins: [ComponentMixin],
+  props: {
+    label: {
+      type: String,
+    },
+    value: {
+      type: Number,
+    },
+    min: {
+      type: Number,
+      default: 0,
+    },
+    max: {
+      type: Number,
+      default: 100,
+    },
+    step: {
+      type: Number,
+      default: 1,
+    },
+  },
+  methods: {
+    onInput(ev) {
+      const { value } = ev.target;
+
+      this.emitUpdateValue(value);
+    },
+    onChange(ev) {
+      const { value } = ev.target;
+
+      this.emitUpdateValue(value);
+    },
+    onInputInput(ev) {
+      const { min, max } = this;
+      let value = parseFloat(ev.target.value);
+
+      if (isNaN(value)) {
+        return;
+      }
+
+      value = clamp(value, min, max);
+      ev.target.value = value;
+    },
+    onInputChange(ev) {
+      const { value } = ev.target;
+
+      this.emitUpdateValue(value);
+    },
+    emitUpdateValue(v) {
+      this.$emit('update:value', parseFloat(v));
+    },
+  },
+  components: {
+    UiInput,
+  },
+};
+</script>
+
+<style src="../styles/components/UiRange.scss" lang="scss" />
