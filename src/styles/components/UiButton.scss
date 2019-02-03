@@ -1,13 +1,14 @@
 @import '../core';
 
 .ui-button {
-  height: 32px;
+  height: 24px;
   overflow: hidden;
   display: inline-flex;
+  background-color: rgba(var(--mono-base-rgb), 1);
 
   button {
     font-family: Monaco, monospace;
-    font-size: 0.8em;
+    font-size: 12px;
   }
 }
 
@@ -23,34 +24,23 @@
 .ui-button__body {
   display: flex;
   align-items: center;
+
+  > .ui-icon {
+    display: flex;
+    flex: 0 0 auto;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: rgba(var(--mono-text-rgb), 1);
+
+    + .ui-button__label {
+      padding-left: 0;
+    }
+  }
 }
 
 .ui-button__label {
   flex: 1 1 auto;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 4px 8px;
   text-align: left;
-}
-
-.ui-button__icon {
-  flex: 0 0 auto;
-  padding-left: 8px;
-  padding-right: 8px;
-
-  + .ui-button__label {
-    padding-left: 0;
-  }
-}
-
-.ui-button {
-  background-color: var(--mono-base-color);
-
-  .ui-button__label {
-    color: var(--mono-text-color);
-    font-size: 1em;
-  }
-
-  .ui-icon {
-    color: var(--mono-text-color);
-  }
+  color: rgba(var(--mono-text-rgb), 1);
 }

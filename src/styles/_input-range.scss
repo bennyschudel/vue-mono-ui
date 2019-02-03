@@ -4,15 +4,17 @@
 ) {
   width: $width;
   height: $height;
-  background: currentColor;
+  // background: currentColor;
 }
 
 @mixin input-range-runnable-track(
   $width,
   $height,
+  $border-width
 ) {
   @include input-range-track($width, $height);
-  border: none;
+  border: $border-width solid currentColor;
+  cursor: ew-resize;
 }
 
 @mixin input-range-thumb(
@@ -31,7 +33,8 @@
 
   $thumb-height: 24px,
   $thumb-width: 4px,
-  $track-height: 4px
+  $track-height: 4px,
+  $border-width: 1px,
 ) {
   input[type="range"] {
     background: transparent;
@@ -41,19 +44,23 @@
 
     &:focus { outline: none; }
 
-    &::-webkit-slider-runnable-track { @include input-range-runnable-track($width, $track-height); }
+    &::-webkit-slider-runnable-track {
+      @include input-range-runnable-track($width, $track-height, $border-width);
+    }
     &::-webkit-slider-thumb {
       @include input-range-thumb($thumb-width, $thumb-height);
 
+      position: relative;
+      top: ($track-height - 2 * $border-width - $thumb-height) / 2;
       -webkit-appearance: none;
-      margin-top: -($thumb-height - $track-height) / 2;
     }
 
-    &::-moz-rangeTrack { @include input-range-runnable-track($width, $track-height); }
+    &::-moz-rangeTrack { @include input-range-runnable-track($width, $track-height, $border-width); }
     &::-moz-thumb { @include input-range-thumb($thumb-width, $thumb-height); }
 
     &::-ms-track {
       @include input-range-track($width, $track-height);
+
       background: transparent;
       border-color: transparent;
       border-width: 10px 0;

@@ -57,24 +57,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.fill {
-  fill: currentColor;
-}
-
-.stroke {
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-miterlimit: 10;
-  stroke-linecap: round;
-}
-
-.no-fill {
-  fill: none;
-}
-
-.no-stroke {
-  stroke: none;
-  stroke-width: 0;
-}
-</style>
+<style src="../styles/components/UiIcon.scss" lang="scss" scoped />

@@ -1,6 +1,11 @@
 <template>
   <div class="ui-color-input">
-    <input
+    <UiColorSwatch
+      v-if="!noSwatch"
+      :value="value"
+      :width="24"
+      :height="24"
+    /><UiInput
       class="ui-color-input__field"
       ref="input"
       :value="value"
@@ -14,6 +19,8 @@ import { upperFirst } from 'lodash';
 
 import Color from '../core/Color';
 
+import UiColorSwatch from './UiColorSwatch';
+
 export default {
   name: 'ui-color-input',
   props: {
@@ -24,6 +31,9 @@ export default {
       type: String,
     },
     asString: {
+      type: Boolean,
+    },
+    noSwatch: {
       type: Boolean,
     },
   },
@@ -56,22 +66,10 @@ export default {
       this.convert(v);
     },
   },
+  components: {
+    UiColorSwatch,
+  },
 };
 </script>
 
-<style lang="scss">
-.ui-color-input {
-}
-
-.ui-color-input__field {
-  font-size: 12px;
-  font-family: Monaco;
-  font-weight: 600;
-  appearance: none;
-  border: 0;
-  padding: 4px 0;
-  outline: none;
-  border-bottom: 1px solid black;
-  width: 100%;
-}
-</style>
+<style src="../styles/components/UiColorInput.scss" lang="scss" />

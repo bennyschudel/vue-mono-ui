@@ -17,7 +17,7 @@
     "dist/*",
     "src/*",
     "!src/demo/*",
-    "!src/stories/*"
+    "!src/storybook/*"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",

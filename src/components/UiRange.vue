@@ -25,15 +25,14 @@
 </template>
 
 <script>
+import { Component } from '../core';
 import { clamp } from '../core/utils';
-
-import ComponentMixin from '../mixins/ComponentMixin';
 
 import UiInput from './UiInput';
 
 export default {
   name: 'ui-range',
-  mixins: [ComponentMixin],
+  extends: Component,
   props: {
     label: {
       type: String,

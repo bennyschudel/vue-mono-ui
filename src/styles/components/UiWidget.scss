@@ -1,0 +1,25 @@
+.ui-widget {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 16px;
+}
+
+.ui-widget__bar {
+  flex: 0 1 auto;
+  font-size: 12px;
+  font-family: Monaco, monospace;
+  font-weight: 600;
+  background-color: rgba(var(--mono-base-rgb), 1);
+  color: rgba(var(--mono-text-rgb), 1);
+  height: 24px;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  user-select: none;
+}
+
+.ui-widget__content {
+  background: white;
+  user-select: none;
+}

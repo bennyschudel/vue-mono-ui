@@ -3,10 +3,11 @@
 
 .ui-range {
   @include input-range(
-    $height: 32px,
-    $track-height: 1px,
-    $thumb-height: 16px,
-    $thumb-width: 1px
+    $height: 24px,
+    $track-height: 24px,
+    $thumb-height: 22px,
+    $thumb-width: 4px,
+    $border-width: 1px,
   );
 
   display: inline-flex;
@@ -20,18 +21,18 @@
 }
 
 .ui-range__input {
-  flex: 0 0 32px;
-  padding-left: 8px;
+  flex: 0 0 48px;
 
   .ui-input__field {
     text-align: right;
+    border-left: none;
   }
 }
 
 .ui-range {
   input[type='range'] {
     width: 100%;
-    color: var(--mono-color);
+    color: rgba(var(--mono-base-rgb), 1);
   }
 
   input[type='number'] {

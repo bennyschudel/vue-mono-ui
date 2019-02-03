@@ -62,19 +62,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.ui-icon-button {
-  background-color: none;
-  border-radius: 50%;
-  border-style: solid;
-  border-color: transparent;
-  padding: 0;
-  box-sizing: content-box;
-  background-clip: padding-box;
-
-  &[data-active] {
-    background-color: black;
-    color: white;
-  }
-}
-</style>
+<style src="../styles/components/UiIconButton.scss" lang="scss" />

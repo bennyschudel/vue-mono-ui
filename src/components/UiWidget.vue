@@ -117,30 +117,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.ui-widget {
-  display: inline-flex;
-  flex-direction: column;
-  margin: 16px;
-}
-
-.ui-widget__bar {
-  flex: 0 1 auto;
-  font-size: 12px;
-  font-family: Monaco, monospace;
-  font-weight: 600;
-  background-color: black;
-  color: white;
-  height: 32px;
-  padding: 0 8px;
-  display: flex;
-  align-items: center;
-  justify-content: stretch;
-  user-select: none;
-}
-
-.ui-widget__content {
-  background: white;
-  user-select: none;
-}
-</style>
+<style src="../styles/components/UiWidget.scss" lang="scss" />

@@ -4,7 +4,7 @@ import { configure } from '@storybook/vue';
 
 import * as components from './components/index';
 
-import '../styles/_variables.scss';
+import './styles/storybook.scss';
 
 const SbComponents = {
   install: Vue => {
@@ -16,7 +16,7 @@ const SbComponents = {
 
 Vue.use(SbComponents);
 
-const req = require.context('./', true, /\.story\.js$/);
+const req = require.context('./stories', true);
 
 function loadStories() {
   req.keys().forEach(req);
