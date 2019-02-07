@@ -35,4 +35,6 @@ export default {
 };
 </script>
 
-<style src="../styles/components/UiColorSwatch.scss" lang="scss" />
+<style lang="scss">
+@import '../styles/components/UiColorSwatch.scss';
+</style>

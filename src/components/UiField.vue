@@ -26,4 +26,6 @@ export default {
 };
 </script>
 
-<style src="../styles/components/UiField.scss" lang="scss" />
+<style lang="scss">
+@import '../styles/components/UiField.scss';
+</style>

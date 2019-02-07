@@ -117,4 +117,6 @@ export default {
 };
 </script>
 
-<style src="../styles/components/UiWidget.scss" lang="scss" />
+<style lang="scss">
+@import '../styles/components/UiWidget.scss';
+</style>

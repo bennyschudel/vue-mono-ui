@@ -37,12 +37,5 @@ export default {
 </script>
 
 <style lang="scss">
-.ui-widget-manager {
-  position: realtive;
-  z-index: 0;
-
-  .ui-widget {
-    position: absolute;
-  }
-}
+@import '../styles/components/UiWidgetManager.scss';
 </style>

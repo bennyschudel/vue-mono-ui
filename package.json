@@ -34,8 +34,10 @@
   "dependencies": {
     "d3": "~5.x",
     "lodash": "~4.x",
-    "vue": "~2.x",
-    "tinycolor2": "^1.4.1"
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "tinycolor2": "^1.4.1",
+    "vue": "~2.x"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -64,7 +66,7 @@
     "rollup-plugin-sass": "^1.1.0",
     "rollup-plugin-scss": "^0.4.0",
     "rollup-plugin-uglify-es": "0.0.1",
-    "rollup-plugin-vue": "4.3.2",
+    "rollup-plugin-vue": "^4.7.1",
     "sass-loader": "^7.1.0",
     "semantic-release": "^15.13.3",
     "tinycolor2": "^1.4.1",

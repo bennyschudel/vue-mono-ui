@@ -62,4 +62,6 @@ export default {
 };
 </script>
 
-<style src="../styles/components/UiIconButton.scss" lang="scss" />
+<style lang="scss">
+@import '../styles/components/UiIconButton.scss';
+</style>

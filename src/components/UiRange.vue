@@ -21,14 +21,14 @@
       @input="onInputInput"
       @change="onInputChange"
     />
-</div>
+  </div>
 </template>
 
 <script>
 import { Component } from '../core';
 import { clamp } from '../core/utils';
 
-import UiInput from './UiInput';
+import UiInput from './UiInput.vue';
 
 export default {
   name: 'ui-range',
@@ -90,4 +90,6 @@ export default {
 };
 </script>
 
-<style src="../styles/components/UiRange.scss" lang="scss" />
+<style lang="scss">
+@import '../styles/components/UiRange.scss';
+</style>

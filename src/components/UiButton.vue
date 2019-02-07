@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import UiIcon from './UiIcon.vue';
+
 export default {
   name: 'ui-button',
   props: {
@@ -52,7 +54,12 @@ export default {
       this.$emit('click', this.value);
     },
   },
+  components: {
+    UiIcon,
+  },
 };
 </script>
 
-<style src="../styles/components/UiButton.scss" lang="scss" />
+<style lang="scss">
+@import '../styles/components/UiButton';
+</style>

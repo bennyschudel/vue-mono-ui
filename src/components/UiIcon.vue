@@ -57,4 +57,6 @@ export default {
 };
 </script>
 
-<style src="../styles/components/UiIcon.scss" lang="scss" scoped />
+<style lang="scss" scoped>
+@import '../styles/components/UiIcon';
+</style>

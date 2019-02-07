@@ -61,4 +61,6 @@ export default {
 };
 </script>
 
-<style src="../styles/components/UiInput.scss" lang="scss" />
+<style lang="scss">
+@import '../styles/components/UiInput.scss';
+</style>

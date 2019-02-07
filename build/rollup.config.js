@@ -3,6 +3,7 @@ import buble from 'rollup-plugin-buble';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify-es';
 import resolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
 
 import minimist from 'minimist';
 
@@ -24,6 +25,7 @@ const config = {
     replace({
       'process.env.NODE_ENV': JSON.stringify('production'),
     }),
+    commonjs(),
     vue({
       css: true,
       compileTemplate: true,

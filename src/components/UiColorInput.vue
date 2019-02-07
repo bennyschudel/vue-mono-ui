@@ -17,9 +17,9 @@
 <script>
 import { upperFirst } from 'lodash';
 
-import Color from '../core/Color';
+import { Color } from '../core';
 
-import UiColorSwatch from './UiColorSwatch';
+import UiColorSwatch from './UiColorSwatch.vue';
 
 export default {
   name: 'ui-color-input',
@@ -72,4 +72,6 @@ export default {
 };
 </script>
 
-<style src="../styles/components/UiColorInput.scss" lang="scss" />
+<style lang="scss">
+@import '../styles/components/UiColorInput.scss';
+</style>
