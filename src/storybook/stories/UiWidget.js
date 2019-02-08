@@ -8,6 +8,7 @@ storiesOf('UiWidget', module)
   .add('toggable widget', () => ({
     data: () => ({
       appearance: 'normal',
+      seamless: true,
     }),
-    template: `<UiWidget :appearance.sync="appearance" title="My Widget"><SbBox /></UiWidget>`,
+    template: `<UiWidget :appearance.sync="appearance" title="My Widget" :seamless="seamless"><SbBox /></UiWidget>`,
   }));

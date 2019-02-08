@@ -12,7 +12,7 @@
 
       <UiWidget title="Input">
         <UiInput :value.sync="inputValue" />
-        <pre>{{inputValue}} {{typeof inputValue}}</pre>
+        <pre>{{ inputValue }} {{ typeof inputValue }}</pre>
       </UiWidget>
 
       <UiWidget
@@ -20,7 +20,9 @@
         :key="index"
         :appearance.sync="item.appearance"
         :title="item.title"
-      >{{item.content}}</UiWidget>
+      >
+        {{ item.content }}
+      </UiWidget>
     </UiWidgetManager>
   </div>
 </template>

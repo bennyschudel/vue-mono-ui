@@ -1,17 +1,17 @@
 <template>
   <div :class="classes">
-    <div
-      class="ui-range__element"
-    ><input
-      type="range"
-      :value="value"
-      :min="min"
-      :max="max"
-      :step="step"
-      @input="onInput"
-      @change="onChange"
-    /></div
-    ><UiInput
+    <div class="ui-range__element">
+      <input
+        type="range"
+        :value="value"
+        :min="min"
+        :max="max"
+        :step="step"
+        @input="onInput"
+        @change="onChange"
+      />
+    </div>
+    <UiInput
       class="ui-range__input"
       type="number"
       :value="value"

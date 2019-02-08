@@ -4,11 +4,9 @@
     @click="onClick"
     :style="styles"
     :data-active="active"
-  ><UiIcon
-    :icon="icon"
-    :size="iconSize"
-  ></UiIcon
-  ></button>
+  >
+    <UiIcon :icon="icon" :size="iconSize"></UiIcon>
+  </button>
 </template>
 
 <script>

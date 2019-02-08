@@ -5,24 +5,15 @@
     :data-active="active"
     :data-appearance="appearance"
     @click="onClick"
+    :data-seamless="seamless"
   >
-    <div
-      class="ui-widget__bar"
-      ref="bar"
-      @click="toggleAppearance"
-    >
-      <div class="ui-widget__title" v-if="title">{{title}}</div>
+    <div class="ui-widget__bar" ref="bar" @click="toggleAppearance">
+      <div class="ui-widget__title" v-if="title">{{ title }}</div>
     </div>
-    <div
-      v-show="is('normal')"
-      class="ui-widget__content"
-    >
+    <div v-show="is('normal')" class="ui-widget__content">
       <slot></slot>
     </div>
-    <div
-      v-show="is('normal')"
-      class="ui-widget__widgets"
-    >
+    <div v-show="is('normal')" class="ui-widget__widgets">
       <slot name="widgets"></slot>
     </div>
   </div>
@@ -47,6 +38,9 @@ export default {
     appearance: {
       type: String,
       default: 'normal',
+    },
+    seamless: {
+      type: Boolean,
     },
   },
   data: () => ({

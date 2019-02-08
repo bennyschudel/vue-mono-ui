@@ -7,7 +7,7 @@
 .ui-widget__bar {
   flex: 0 1 auto;
   font-size: 12px;
-  font-family: Monaco, monospace;
+  font-family: var(--mono-font);
   font-weight: 600;
   background-color: rgba(var(--mono-base-rgb), 1);
   color: rgba(var(--mono-text-rgb), 1);
@@ -20,6 +20,14 @@
 }
 
 .ui-widget__content {
-  background: white;
+  background-color: rgba(var(--mono-background-rgb), 1);
   user-select: none;
+}
+
+.ui-widget {
+  &:not([data-seamless]) {
+    .ui-widget__content {
+      padding: 16px;
+    }
+  }
 }

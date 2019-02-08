@@ -7,8 +7,9 @@
   background-color: rgba(var(--mono-base-rgb), 1);
 
   button {
-    font-family: Monaco, monospace;
+    font-family: var(--mono-font);
     font-size: 12px;
+    font-weight: 600;
   }
 }
 

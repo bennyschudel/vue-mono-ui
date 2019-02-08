@@ -1,9 +1,7 @@
 <template>
   <div class="ui-field">
-    <UiLabel v-if="label">{{label}}</UiLabel>
-    <div class="ui-field__content"
-      ><slot></slot
-    ></div>
+    <UiLabel v-if="label">{{ label }}</UiLabel>
+    <div class="ui-field__content"><slot></slot></div>
   </div>
 </template>
 

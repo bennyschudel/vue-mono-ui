@@ -1,0 +1,48 @@
+.ui-select {
+  display: inline-flex;
+  height: 24px;
+  align-items: stretch;
+}
+
+.ui-select__container {
+  display: inline-flex;
+  flex: 1 1 auto;
+  align-items: center;
+}
+
+select {
+  &.ui-select__element {
+    outline: none;
+    border-style: solid;
+    border-width: 1px 1px 2px 1px;
+    border-color: currentColor;
+    border-radius: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 24px;
+    margin-right: -16px;
+    position: relative;
+    z-index: 1;
+    line-height: 1;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+}
+
+.ui-select {
+  .ui-icon {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    z-index: 2;
+    align-self: center;
+    right: 4px;
+    pointer-events: none;
+  }
+}

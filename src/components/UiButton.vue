@@ -7,11 +7,8 @@
       v-on="listeners"
     >
       <div class="ui-button__body">
-        <UiIcon
-          v-if="icon"
-          :icon="icon" 
-          :size="16"
-        /><div class="ui-button__label">
+        <UiIcon v-if="icon" :icon="icon" :size="16" />
+        <div class="ui-button__label">
           <slot></slot>
         </div>
       </div>

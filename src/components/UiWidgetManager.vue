@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="ui-widget-manager"
-    @mousedown="focusWidget($event.target)"
-  >
+  <div class="ui-widget-manager" @mousedown="focusWidget($event.target)">
     <slot></slot>
   </div>
 </template>
