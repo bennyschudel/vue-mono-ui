@@ -36,10 +36,6 @@ export default {
       type: Boolean,
     },
   },
-  model: {
-    prop: 'value',
-    event: 'change',
-  },
   computed: {
     options_() {
       return this.options.map(v => {
@@ -58,10 +54,10 @@ export default {
     onChange(ev) {
       const { value } = ev.target;
 
-      this.emitChange(value);
+      this.emitUpdateValue(value);
     },
-    emitChange(v) {
-      this.$emit('change', v);
+    emitUpdateValue(v) {
+      this.$emit('update:value', v);
     },
   },
   components: {
