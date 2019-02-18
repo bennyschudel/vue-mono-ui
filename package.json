@@ -16,10 +16,13 @@
   "files": [
     "dist/*",
     "src/*",
+    "!build/*",
     "!src/demo/*",
     "!src/storybook/*"
+    "!vue.config.js"
   ],
   "scripts": {
+    "prepare": "npm run build",
     "serve": "vue-cli-service serve",
     "lint": "vue-cli-service lint",
     "test": "vue-cli-service lint",
@@ -67,9 +70,6 @@
     "rollup-plugin-vue": "^4.7.1",
     "sass-loader": "^7.1.0",
     "semantic-release": "^15.13.3",
-    "tinycolor2": "^1.4.1",
-    "vue-loader": "^15.6.2",
-    "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.22"
   },
   "babel": {
