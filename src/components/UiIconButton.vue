@@ -4,11 +4,9 @@
     @click="onClick"
     :style="styles"
     :data-active="active"
-  ><UiIcon
-    :icon="icon"
-    :size="iconSize"
-  ></UiIcon
-  ></button>
+  >
+    <UiIcon :icon="icon" :size="iconSize"></UiIcon>
+  </button>
 </template>
 
 <script>
@@ -63,18 +61,5 @@ export default {
 </script>
 
 <style lang="scss">
-.ui-icon-button {
-  background-color: none;
-  border-radius: 50%;
-  border-style: solid;
-  border-color: transparent;
-  padding: 0;
-  box-sizing: content-box;
-  background-clip: padding-box;
-
-  &[data-active] {
-    background-color: black;
-    color: white;
-  }
-}
+@import '../styles/components/UiIconButton.scss';
 </style>

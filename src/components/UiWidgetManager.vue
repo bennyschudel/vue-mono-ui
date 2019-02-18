@@ -1,8 +1,5 @@
 <template>
-  <div
-    class="ui-widget-manager"
-    @mousedown="focusWidget($event.target)"
-  >
+  <div class="ui-widget-manager" @mousedown="focusWidget($event.target)">
     <slot></slot>
   </div>
 </template>
@@ -37,12 +34,5 @@ export default {
 </script>
 
 <style lang="scss">
-.ui-widget-manager {
-  position: realtive;
-  z-index: 0;
-
-  .ui-widget {
-    position: absolute;
-  }
-}
+@import '../styles/components/UiWidgetManager.scss';
 </style>

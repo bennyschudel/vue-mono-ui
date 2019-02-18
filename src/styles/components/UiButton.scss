@@ -1,0 +1,47 @@
+@import '../core';
+
+.ui-button {
+  height: 24px;
+  overflow: hidden;
+  display: inline-flex;
+  background-color: rgba(var(--mono-base-rgb), 1);
+
+  button {
+    font-family: var(--mono-font);
+    font-size: 12px;
+    font-weight: 600;
+  }
+}
+
+.ui-button__element {
+  @include ui-button-clear;
+
+  outline: none;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.ui-button__body {
+  display: flex;
+  align-items: center;
+
+  > .ui-icon {
+    display: flex;
+    flex: 0 0 auto;
+    margin-left: 4px;
+    margin-right: 4px;
+    color: rgba(var(--mono-text-rgb), 1);
+
+    + .ui-button__label {
+      padding-left: 0;
+    }
+  }
+}
+
+.ui-button__label {
+  flex: 1 1 auto;
+  padding: 4px 8px;
+  text-align: left;
+  color: rgba(var(--mono-text-rgb), 1);
+}

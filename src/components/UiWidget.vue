@@ -5,24 +5,15 @@
     :data-active="active"
     :data-appearance="appearance"
     @click="onClick"
+    :data-seamless="seamless"
   >
-    <div
-      class="ui-widget__bar"
-      ref="bar"
-      @click="toggleAppearance"
-    >
-      <div class="ui-widget__title" v-if="title">{{title}}</div>
+    <div class="ui-widget__bar" ref="bar" @click="toggleAppearance">
+      <div class="ui-widget__title" v-if="title">{{ title }}</div>
     </div>
-    <div
-      v-show="is('normal')"
-      class="ui-widget__content"
-    >
+    <div v-show="is('normal')" class="ui-widget__content">
       <slot></slot>
     </div>
-    <div
-      v-show="is('normal')"
-      class="ui-widget__widgets"
-    >
+    <div v-show="is('normal')" class="ui-widget__widgets">
       <slot name="widgets"></slot>
     </div>
   </div>
@@ -47,6 +38,9 @@ export default {
     appearance: {
       type: String,
       default: 'normal',
+    },
+    seamless: {
+      type: Boolean,
     },
   },
   data: () => ({
@@ -118,29 +112,5 @@ export default {
 </script>
 
 <style lang="scss">
-.ui-widget {
-  display: inline-flex;
-  flex-direction: column;
-  margin: 16px;
-}
-
-.ui-widget__bar {
-  flex: 0 1 auto;
-  font-size: 12px;
-  font-family: Monaco, monospace;
-  font-weight: 600;
-  background-color: black;
-  color: white;
-  height: 32px;
-  padding: 0 8px;
-  display: flex;
-  align-items: center;
-  justify-content: stretch;
-  user-select: none;
-}
-
-.ui-widget__content {
-  background: white;
-  user-select: none;
-}
+@import '../styles/components/UiWidget.scss';
 </style>

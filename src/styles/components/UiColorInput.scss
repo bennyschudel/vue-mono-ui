@@ -1,0 +1,8 @@
+.ui-color-input {
+  display: inline-flex;
+
+  .ui-color-swatch {
+    flex: 0 0 auto;
+    border-right: 0;
+  }
+}

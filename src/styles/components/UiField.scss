@@ -1,0 +1,12 @@
+.ui-field {
+  display: flex;
+  flex-direction: column;
+
+  > .ui-label {
+    margin-bottom: 4px;
+  }
+}
+
+.ui-field__content {
+  display: flex;
+}

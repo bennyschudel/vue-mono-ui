@@ -1,0 +1,16 @@
+.ui-icon-button {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: transparent;
+  padding: 0;
+  box-sizing: content-box;
+  background-clip: padding-box;
+
+  color: rgba(var(--mono-base-rgb), 1);
+  background-color: transparent;
+
+  &[data-active] {
+    background-color: rgba(var(--mono-base-rgb), 1);
+    color: rgba(var(--mono-text-rgb), 1);
+  }
+}
