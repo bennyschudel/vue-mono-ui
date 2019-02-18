@@ -1,0 +1,9 @@
+.ui-color-palette {
+  display: inline-flex;
+
+  .ui-color-swatch {
+    + .ui-color-swatch {
+      border-left: 0;
+    }
+  }
+}

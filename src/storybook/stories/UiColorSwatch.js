@@ -1,8 +1,31 @@
 import { storiesOf } from '@storybook/vue';
 
-storiesOf('UiColorSwatch', module).add('default widget', () => ({
-  data: () => ({
-    value: 'hotpink',
-  }),
-  template: `<UiColorSwatch :value="value" />`,
-}));
+import { Color } from '../../core';
+
+storiesOf('UiColorSwatch', module)
+  .add('default widget', () => ({
+    data: () => ({
+      color: Color('#ff0'),
+    }),
+    template: `<UiColorSwatch :color="color" />`,
+  }))
+  .add('drag and drop', () => ({
+    data: () => ({
+      color: Color('gold'),
+      colors: ['hotpink', 'gold', 'chocolate', 'red', 'green', 'blue'].map(
+        Color,
+      ),
+    }),
+    template: `
+<div :style="{ display: 'flex' }">
+  <UiColorInput
+    :color.sync="color"
+     format="hex"
+  />
+  <UiColorPalette
+    :colors.sync="colors"
+    transfer="drag"
+  />
+</div>
+`,
+  }));

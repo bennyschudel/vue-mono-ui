@@ -7,6 +7,7 @@
           v-for="(item, index) in options_"
           :key="index"
           :value="item.value"
+          :data-type="typeof item.value"
         >
           {{ item.label || item.value }}
         </option>
@@ -20,7 +21,7 @@
 import { Component } from '../core';
 import { isPlainObject } from '../core/utils';
 
-import UiIcon from './UiIcon';
+import UiIcon from './UiIcon.vue';
 
 export default {
   name: 'ui-select',
@@ -52,7 +53,14 @@ export default {
   },
   methods: {
     onChange(ev) {
-      const { value } = ev.target;
+      const { target } = ev;
+      let { value } = target;
+      const el = target.item(target.selectedIndex);
+      const { type } = el.dataset;
+
+      if (type === 'number') {
+        value = Number(value);
+      }
 
       this.emitUpdateValue(value);
     },

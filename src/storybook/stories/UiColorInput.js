@@ -1,8 +1,10 @@
 import { storiesOf } from '@storybook/vue';
 
+import { Color } from '../../core';
+
 storiesOf('UiColorInput', module).add('default widget', () => ({
   data: () => ({
-    value: 'red',
+    value: Color('red'),
   }),
-  template: `<UiColorInput :value.sync="value" format="hex" as-string />`,
+  template: `<UiColorInput :color.sync="value" format="hex" />`,
 }));

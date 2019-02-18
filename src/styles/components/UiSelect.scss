@@ -15,7 +15,8 @@ select {
     outline: none;
     border-style: solid;
     border-width: 1px 1px 2px 1px;
-    border-color: currentColor;
+    border-color: rgba(var(--mono-base-rgb), 1);
+    color: rgba(var(--mono-base-rgb), 1);
     border-radius: 0;
     background-color: transparent;
     height: 100%;
@@ -23,9 +24,11 @@ select {
     padding-left: 8px;
     padding-right: 24px;
     margin-right: -16px;
+    font-family: var(--mono-font);
+    font-size: 12px;
     position: relative;
     z-index: 1;
-    line-height: 1;
+    outline: none;
     -webkit-appearance: none;
     -moz-appearance: none;
 

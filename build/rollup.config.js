@@ -11,7 +11,7 @@ const argv = minimist(process.argv.slice(2));
 
 const config = {
   input: 'src/entry.js',
-  external: ['d3', 'lodash', 'vue'],
+  external: ['d3', 'lodash', 'vue', 'vue-drag-drop'],
   output: {
     name: 'VueMonoUi',
     exports: 'named',
@@ -19,6 +19,7 @@ const config = {
       d3: 'd3',
       lodash: '_',
       vue: 'Vue',
+      'vue-drag-drop': 'VueDragDrop',
     },
   },
   plugins: [

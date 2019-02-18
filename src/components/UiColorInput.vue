@@ -2,39 +2,55 @@
   <div class="ui-color-input">
     <UiColorSwatch
       v-if="!noSwatch"
-      :value="value"
-      :width="24"
-      :height="24"
-    /><UiInput
-      class="ui-color-input__field"
-      ref="input"
-      :value="value"
-      @change="onChange($event.target.value)"
+      :color="color"
+      :transfer="transfer"
+      @update:color="onChange"
     />
+    <Component :is="inputComponent" @drop="onDrop">
+      <UiInput
+        class="ui-color-input__field"
+        ref="input"
+        :value="value"
+        @change="onChange($event.target.value)"
+      />
+    </Component>
   </div>
 </template>
 
 <script>
-import { upperFirst } from 'lodash';
+import { Drop } from 'vue-drag-drop';
 
-import { Color } from '../core';
+import { Component, Color } from '../core';
+import { upperFirst } from '../core/utils';
+
+import { Transfer } from '../mixins';
 
 import UiColorSwatch from './UiColorSwatch.vue';
 
 export default {
   name: 'ui-color-input',
+  extends: Component,
+  mixins: [Transfer],
   props: {
-    value: {
-      type: String,
+    color: {
+      type: Color,
     },
     format: {
       type: String,
-    },
-    asString: {
-      type: Boolean,
+      default: 'hex',
     },
     noSwatch: {
       type: Boolean,
+    },
+  },
+  computed: {
+    value() {
+      const fn = `to${upperFirst(this.format)}String`;
+
+      return this.color[fn]();
+    },
+    inputComponent() {
+      return this.droppable ? 'Drop' : 'div';
     },
   },
   methods: {
@@ -42,31 +58,23 @@ export default {
       this.$refs.input.value = this.value;
     },
     convert(value) {
-      const { format, asString } = this;
-
       let color = new Color(value);
 
       if (!color.isValid()) {
         return this.reset();
       }
 
-      if (format) {
-        let fn = `to${upperFirst(format)}${asString ? 'String' : ''}`;
-
-        if (!(fn in color)) {
-          return this.reset();
-        }
-
-        color = color[fn]();
-      }
-
-      this.$emit('update:value', color);
+      this.$emit('update:color', color);
     },
     onChange(v) {
       this.convert(v);
     },
+    onDrop(v) {
+      this.convert(v);
+    },
   },
   components: {
+    Drop,
     UiColorSwatch,
   },
 };
