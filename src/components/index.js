@@ -12,5 +12,6 @@ export { default as UiInput } from './UiInput.vue';
 export { default as UiLabel } from './UiLabel.vue';
 export { default as UiRange } from './UiRange.vue';
 export { default as UiSelect } from './UiSelect.vue';
+export { default as UiSpinner } from './UiSpinner.vue';
 export { default as UiWidget } from './UiWidget.vue';
 export { default as UiWidgetManager } from './UiWidgetManager.vue';

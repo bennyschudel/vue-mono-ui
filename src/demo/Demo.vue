@@ -1,12 +1,12 @@
 <template>
   <div class="demo">
     <UiWidgetManager>
-      <UiWidget title="buttons">
+      <UiWidget title="Buttons">
         <UiButton>Hello</UiButton>
         <UiButton icon="download">Hello</UiButton>
       </UiWidget>
 
-      <UiWidget title="range">
+      <UiWidget title="Range">
         <UiRange :value.sync="rangeValue" />
       </UiWidget>
 
@@ -22,6 +22,10 @@
         :title="item.title"
       >
         {{ item.content }}
+      </UiWidget>
+
+      <UiWidget title="Spinner">
+        <UiSpinner />
       </UiWidget>
     </UiWidgetManager>
   </div>
