@@ -71,6 +71,28 @@
         d="M21,21H3v-3h18V21z M12,2v13 M7,10l5,5l5-5"
       />
     </template>
+    <template v-else-if="is('trash')">
+      <rect class="stroke no-fill" x="6" y="7" width="12" height="15" />
+      <line class="stroke no-fill" x1="9" y1="10" x2="9" y2="19" />
+      <line class="stroke no-fill" x1="12" y1="10" x2="12" y2="19" />
+      <line class="stroke no-fill" x1="15" y1="10" x2="15" y2="19" />
+      <line class="stroke no-fill" x1="5" y1="4" x2="19" y2="4" />
+      <rect class="stroke no-fill" x="9.5" y="1" width="5" height="3" />
+    </template>
+    <template v-else-if="is('plus')">
+      <line class="stroke no-fill" x1="12" y1="6.5" x2="12" y2="17.5" />
+      <line class="stroke no-fill" x1="6.5" y1="12" x2="17.5" y2="12" />
+    </template>
+    <template v-else-if="is('sortable-block')">
+      <rect class="stroke no-fill" x="7" y="7" width="10" height="10" />
+      <polyline class="stroke no-fill" points="21,10 23,12 21,14" />
+      <polyline class="stroke no-fill" points="3,10 1,12 3,14" />
+    </template>
+    <template v-else-if="is('sortable-block-active')">
+      <rect class="stroke fill" x="7" y="7" width="10" height="10" />
+      <polyline class="stroke no-fill" points="21,10 23,12 21,14" />
+      <polyline class="stroke no-fill" points="3,10 1,12 3,14" />
+    </template>
   </svg>
 </template>
 

@@ -1,9 +1,10 @@
 <template>
   <button
     class="ui-icon-button"
-    @click="onClick"
     :style="styles"
     :data-active="active"
+    v-bind="$attrs"
+    v-on="$listeners"
   >
     <UiIcon :icon="icon" :size="iconSize"></UiIcon>
   </button>
@@ -47,11 +48,6 @@ export default {
     },
     size() {
       return this.iconSize + this.padding + this.margin;
-    },
-  },
-  methods: {
-    onClick(e) {
-      this.$emit('click', e);
     },
   },
   components: {

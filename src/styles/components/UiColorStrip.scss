@@ -1,0 +1,9 @@
+.ui-color-strip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  padding: 1px 0 0 1px;
+
+  .ui-color-swatch {
+    margin: -1px 0 0 -1px;
+  }
+}

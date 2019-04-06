@@ -49,8 +49,8 @@ export default {
       default: 100,
     },
     step: {
-      type: Number,
-      default: 1,
+      type: [Number, String],
+      default: 'any',
     },
   },
   methods: {

@@ -1,3 +1,5 @@
+import * as directives from '../directives';
+
 export default {
   name: 'ui-component',
   props: {
@@ -20,5 +22,8 @@ export default {
         [`${name}`]: true,
       };
     },
+  },
+  directives: {
+    ...directives,
   },
 };

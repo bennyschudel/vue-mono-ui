@@ -11,7 +11,7 @@ const argv = minimist(process.argv.slice(2));
 
 const config = {
   input: 'src/entry.js',
-  external: ['d3', 'lodash', 'vue', 'vue-drag-drop'],
+  external: ['d3', 'lodash', 'vue', 'vue-drag-drop', 'vuedraggable'],
   output: {
     name: 'VueMonoUi',
     exports: 'named',
@@ -20,6 +20,7 @@ const config = {
       lodash: '_',
       vue: 'Vue',
       'vue-drag-drop': 'VueDragDrop',
+      vuedraggable: 'vuedraggable',
     },
   },
   plugins: [
@@ -36,6 +37,9 @@ const config = {
     }),
     buble({
       objectAssign: 'Object.assign',
+      transforms: {
+        forOf: false,
+      },
     }),
     resolve(),
   ],

@@ -13,4 +13,9 @@
     background-color: rgba(var(--mono-base-rgb), 1);
     color: rgba(var(--mono-text-rgb), 1);
   }
+
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
 }
