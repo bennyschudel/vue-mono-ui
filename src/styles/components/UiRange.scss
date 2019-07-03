@@ -11,9 +11,11 @@
   );
 
   display: inline-flex;
-  height: 32px;
+  height: 24px;
   justify-content: stretch;
   align-items: stretch;
+  width: 100%;
+  max-width: 480px;
 }
 
 .ui-range__element {

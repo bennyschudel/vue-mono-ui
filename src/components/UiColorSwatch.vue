@@ -9,11 +9,9 @@
     @drop="onDrop"
     @click="emitUpdateSelected"
   >
-    <Drag
-      v-if="draggable"
-      class="ui-color-swatch__body"
-      :transfer-data="color"
-    ></Drag>
+    <Drag v-if="draggable" class="ui-color-swatch__body" :transfer-data="color">
+      <slot></slot>
+    </Drag>
   </Component>
 </template>
 

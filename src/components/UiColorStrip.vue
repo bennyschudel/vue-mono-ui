@@ -1,8 +1,8 @@
 <template>
   <div class="ui-color-strip">
     <UiColorSwatch
-      v-for="item in colors"
-      :key="item.toHex8()"
+      v-for="(item, i) in colors"
+      :key="i"
       :color="item"
       :selected="item.equals(color)"
       transfer="drag"

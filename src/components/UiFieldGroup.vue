@@ -1,8 +1,16 @@
 <template>
-  <fieldset class="ui-field-group" :disabled="disabled" :name="name">
+  <fieldset
+    class="ui-field-group"
+    :disabled="disabled"
+    :name="name"
+    :data-collapsed="isCollapsible && collapsed"
+  >
     <UiLabel v-if="label" tag="legend">{{ label }}</UiLabel>
-    <div class="ui-field-group__content">
+    <div v-show="!collapsed" class="ui-field-group__content">
       <slot></slot>
+    </div>
+    <div v-if="isCollapsible" class="ui-field-group__collapse" @click="toggle">
+      <UiIcon :icon="collapsed ? 'arrow-down' : 'arrow-up'" />
     </div>
   </fieldset>
 </template>
@@ -24,6 +32,19 @@ export default {
     },
     name: {
       type: String,
+    },
+    collapsed: {
+      type: Boolean,
+    },
+  },
+  computed: {
+    isCollapsible() {
+      return this.$options.propsData.hasOwnProperty('collapsed');
+    },
+  },
+  methods: {
+    toggle() {
+      this.$emit('update:collapsed', !this.collapsed);
     },
   },
   components: {

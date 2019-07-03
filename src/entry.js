@@ -1,5 +1,5 @@
 /* global window global */
-import * as components from './components/index';
+import * as components from './components/index.js';
 
 function install(Vue) {
   if (install.installed) {
@@ -29,6 +29,8 @@ if (GlobalVue) {
 
 export default plugin;
 
-export { default as Color } from './core/Color';
+export { default as Color } from './core/Color.js';
+export { default as Colors } from './core/Colors.js';
+export { default as ColorList } from './core/ColorList.js';
 
 export * from './components/index';

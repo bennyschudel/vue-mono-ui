@@ -1,7 +1,6 @@
 .ui-widget {
   display: inline-flex;
   flex-direction: column;
-  margin: 16px;
 }
 
 .ui-widget__bar {
@@ -22,6 +21,12 @@
 .ui-widget__content {
   background-color: rgba(var(--mono-background-rgb), 1);
   user-select: none;
+}
+
+.ui-widget__widgets {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .ui-widget {

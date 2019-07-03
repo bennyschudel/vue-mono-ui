@@ -93,6 +93,17 @@
       <polyline class="stroke no-fill" points="21,10 23,12 21,14" />
       <polyline class="stroke no-fill" points="3,10 1,12 3,14" />
     </template>
+    <template v-else-if="is('palette')">
+      <path
+        class="stroke no-fill"
+        d="M15.73,20.73c-2.25-2.25-3-5.19-1.57-6.57s4.32-.68,6.57,1.57a9.58,9.58,0,0,1,.67.76A9.71,9.71,0,0,0,22.5,12,10.13,10.13,0,0,0,12.25,2,10.13,10.13,0,0,0,2,12,10.13,10.13,0,0,0,12.25,22a10.34,10.34,0,0,0,4-.8A6.06,6.06,0,0,1,15.73,20.73Z"
+      />
+      <circle class="fill no-stroke" cx="9" cy="17" r="1.5" />
+      <circle class="fill no-stroke" cx="6" cy="12.5" r="1.5" />
+      <circle class="fill no-stroke" cx="8" cy="8" r="1.5" />
+      <circle class="fill no-stroke" cx="12.5" cy="6" r="1.5" />
+      <circle class="fill no-stroke" cx="17" cy="8.5" r="1.5" />
+    </template>
   </svg>
 </template>
 

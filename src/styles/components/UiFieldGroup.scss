@@ -1,16 +1,15 @@
 .ui-field-group {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(var(--mono-base-rgb), 1);
-  border-left: 0;
-  border-right: 0;
+  border: none;
+  border-top: 1px solid rgba(var(--mono-base-rgb), 1);
   padding: 8px 0 16px 0;
   margin: 0;
 
   > .ui-label {
-    padding: 0;
-    padding-right: 4px;
+    padding: 0 4px;
     font-weight: bold;
+    margin: 0 auto;
   }
 
   .ui-input + .ui-input {
@@ -36,5 +35,20 @@
 
   .ui-label {
     margin-right: 8px;
+  }
+}
+
+.ui-field-group__collapse {
+  display: flex;
+  align-items: center;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+.ui-field-group {
+  &[data-collapsed] {
+    .ui-field-group__collapse {
+      margin-top: 0;
+    }
   }
 }

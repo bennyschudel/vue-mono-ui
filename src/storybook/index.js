@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 import { configure } from '@storybook/vue';
 
-import * as components from './components/index';
+import * as components from './components/index.js';
 
 import './styles/storybook.scss';
 

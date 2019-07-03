@@ -61,12 +61,28 @@
           @click="onRemoveColor(color)"
         />
       </Drop>
+      <Drag :transfer-data="colors">
+        <Drop
+          @drop="onAddPalette"
+          class="ui-drop"
+          v-ui-drop-target="canAddPalette"
+        >
+          <UiIconButton
+            icon="palette"
+            :icon-size="16"
+            :padding="2"
+            :margin="2"
+            :disabled="!canAddPalette"
+            data-action="new-palette"
+          />
+        </Drop>
+      </Drag>
     </div>
   </div>
 </template>
 
 <script>
-import { Drop } from 'vue-drag-drop';
+import { Drag, Drop } from 'vue-drag-drop';
 import Draggable from 'vuedraggable';
 
 import { Component, Color } from '../core';
@@ -100,13 +116,17 @@ export default {
     canRemoveColor() {
       return !this.isSortable;
     },
+    canAddPalette() {
+      return !this.isSortable;
+    },
   },
   methods: {
     onDraggableChange(d) {
+      this.isSortable = false;
       this.emitUpdateColors(d);
     },
     onAddColor(color) {
-      if (!this.canAddColor) {
+      if (!this.canAddColor || !(color instanceof Color)) {
         return;
       }
 
@@ -144,6 +164,9 @@ export default {
     onSwatchSelect(color) {
       this.emitUpdateColor(color);
     },
+    onAddPalette(colors) {
+      this.emitUpdateColors(colors);
+    },
     emitUpdateColors(colors) {
       const clonedColors = colors.map(d => d.clone());
 
@@ -154,6 +177,7 @@ export default {
     },
   },
   components: {
+    Drag,
     Drop,
     Draggable,
     UiColorSwatch,
