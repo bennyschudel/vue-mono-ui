@@ -2,6 +2,12 @@
 export { default as UiButton } from './UiButton.vue';
 export { default as UiColorInput } from './UiColorInput.vue';
 export { default as UiColorPalette } from './UiColorPalette.vue';
+export {
+  default as UiColorPaletteCollection,
+} from './UiColorPaletteCollection.vue';
+export {
+  default as UiColorPaletteTransfer,
+} from './UiColorPaletteTransfer.vue';
 export { default as UiColorStrip } from './UiColorStrip.vue';
 export { default as UiColorSwatch } from './UiColorSwatch.vue';
 export { default as UiField } from './UiField.vue';

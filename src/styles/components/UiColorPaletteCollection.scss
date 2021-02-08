@@ -1,0 +1,16 @@
+.ui-color-palette-collection {
+  display: flex;
+  flex-direction: column;
+}
+
+.ui-color-palette-collection__admin {
+  border-top: 1px solid black;
+  margin-top: 16px;
+}
+
+.ui-color-palette-collection__add {
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

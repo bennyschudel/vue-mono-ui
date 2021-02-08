@@ -1,14 +1,6 @@
 <template>
-  <div class="ui-color-strip">
-    <UiColorSwatch
-      v-for="(item, i) in colors"
-      :key="i"
-      :color="item"
-      :selected="item.equals(color)"
-      transfer="drag"
-      @update:selected="onSwatchSelect(item)"
-    />
-    <Drag v-if="canTransfer" :transfer-data="colors">
+  <div class="ui-color-palette-transfer">
+    <Drag :transfer-data="colors">
       <Drop @drop="onAddPalette" class="ui-drop">
         <UiIconButton
           icon="palette"
@@ -24,22 +16,17 @@
 
 <script>
 import { Drag, Drop } from 'vue-drag-drop';
-import { Component, Color } from '../core';
 
-import UiColorSwatch from './UiColorSwatch.vue';
+import { Component } from '../core';
+
+import UiIconButton from './UiIconButton.vue';
 
 export default {
-  name: 'ui-color-strip',
+  name: 'ui-color-palette-transfer',
   extends: Component,
   props: {
     colors: {
       type: Array,
-    },
-    color: {
-      type: Color,
-    },
-    canTransfer: {
-      type: Boolean,
     },
   },
   computed: {
@@ -48,9 +35,6 @@ export default {
     },
   },
   methods: {
-    onSwatchSelect(color) {
-      this.emitUpdateColor(color);
-    },
     onAddPalette(colors) {
       this.emitUpdateColors(colors);
     },
@@ -59,18 +43,15 @@ export default {
 
       this.$emit('update:colors', clonedColors);
     },
-    emitUpdateColor(color) {
-      this.$emit('update:color', color.clone());
-    },
   },
   components: {
     Drag,
     Drop,
-    UiColorSwatch,
+    UiIconButton,
   },
 };
 </script>
 
 <style lang="scss">
-@import '../styles/components/UiColorStrip';
+@import '../styles/components/UiColorPaletteTransfer';
 </style>
