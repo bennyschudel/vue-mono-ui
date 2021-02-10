@@ -13,7 +13,7 @@ storiesOf('UiColorSwatch', module)
     data: () => ({
       color: Color('gold'),
       colors: ['hotpink', 'gold', 'chocolate', 'red', 'green', 'blue'].map(
-        Color,
+        d => Color(d),
       ),
     }),
     template: `

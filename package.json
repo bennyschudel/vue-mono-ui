@@ -35,13 +35,13 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
+    "core-js": "~2.x",
     "d3": "~5.x",
-    "lodash": "^4.17.20",
-    "sass-loader": "^10.1.1",
-    "tinycolor2": "^1.4.2",
+    "lodash": "~4.x",
+    "tinycolor2": "~1.x",
     "vue": "~2.x",
-    "vue-drag-drop": "^1.1.4",
-    "vuedraggable": "^2.24.3"
+    "vue-drag-drop": "~1.x",
+    "vuedraggable": "~2.x"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
@@ -70,6 +70,7 @@
     "rollup-plugin-replace": "^2.1.0",
     "rollup-plugin-uglify-es": "0.0.1",
     "rollup-plugin-vue": "^4.7.1",
+    "sass-loader": "^10.1.1",
     "semantic-release": "^17.2.3",
     "vue-loader": "^15.9.6",
     "vue-template-compiler": "^2.5.22"

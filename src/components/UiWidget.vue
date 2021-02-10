@@ -4,11 +4,11 @@
     :style="styles"
     :data-active="active"
     :data-appearance="appearance"
-    @click="onClick"
     :data-seamless="seamless"
+    @click="onClick"
   >
-    <div class="ui-widget__bar" ref="bar" @click="toggleAppearance">
-      <div class="ui-widget__title" v-if="title">{{ title }}</div>
+    <div class="ui-widget__bar" ref="bar">
+      <div class="ui-widget__title" @click="toggleAppearance">{{ title }}</div>
     </div>
     <div v-show="is('normal')" class="ui-widget__content">
       <slot></slot>
@@ -33,7 +33,6 @@ export default {
     },
     title: {
       type: String,
-      default: 'Widget',
     },
     appearance: {
       type: String,

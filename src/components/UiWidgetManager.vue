@@ -1,5 +1,5 @@
 <template>
-  <div class="ui-widget-manager" @mousedown="focusWidget($event.target)">
+  <div class="ui-widget-manager" @pointerup="focusWidget($event.target)">
     <slot></slot>
   </div>
 </template>
@@ -12,6 +12,8 @@ export default {
   }),
   methods: {
     focusWidget(target) {
+      console.log('focus');
+
       const widget = target.matches('.ui-widget')
         ? target
         : target.closest('.ui-widget');

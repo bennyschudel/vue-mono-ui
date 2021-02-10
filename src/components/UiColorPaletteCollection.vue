@@ -17,11 +17,11 @@
         class="ui-drop ui-color-palette-collection__add"
       >
         <UiIconButton
-          icon="plus"
-          :icon-size="16"
+          icon="palette"
           :padding="2"
           :margin="2"
           data-action="new-palette"
+          @click="onAddPalette()"
         />
       </Drop>
     </div>
@@ -71,7 +71,7 @@ export default {
 
       this.emitUpdatePalettes(data);
     },
-    onAddPalette(d) {
+    onAddPalette(d = []) {
       let data = this.clonePalettes();
 
       data.push({
